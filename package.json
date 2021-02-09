@@ -42,5 +42,8 @@
     "typescript": "^3.9.2"
   },
   "author": "Johan Ablett-Karlsson",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.841.0"
+  }
 }
