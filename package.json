@@ -36,7 +36,7 @@
     "@types/node": "^14.14.17",
     "jest": "^25",
     "ts-jest": "^25.5.1",
-    "tslint": "^6.1.2",
+    "tslint": "^5",
     "tslint-config-airbnb": "^5.11.2",
     "typedoc": "^0.17.6",
     "typescript": "^3.9.2"
