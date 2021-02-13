@@ -14,3 +14,16 @@ export interface Metric {
    */
   value: number
 }
+
+export function metricFromString(raw: string): Metric {
+  const chunks = raw.split(';');
+  return {
+    startTimeAsUnixTimestamp: parseInt(chunks[0]),
+    value: parseFloat(chunks[1])
+  }
+
+}
+
+export function metricToString(metric: Metric): string {
+  return `${metric.startTimeAsUnixTimestamp};${metric.value}`;
+}
