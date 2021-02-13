@@ -20,5 +20,3 @@ async function doWork() {
   console.log('got response', response);
 }
 
-doWork();
-
