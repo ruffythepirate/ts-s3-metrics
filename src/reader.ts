@@ -1,6 +1,6 @@
 import S3 from 'aws-sdk/clients/s3';
 import {MetricKey} from './metric-key';
-import {Metric} from './metric';
+import {Metric, metricFromString} from './metric';
 
 /**
  * Class that supports reading metrics from S3. It initializes an
@@ -17,6 +17,12 @@ export class Reader {
 
   /**
    * Reads all the metrics for the given key that are within the given time interval.
+   * @param key
+   * The metric we are looking for.
+   * @param from
+   * The date from which we want to read the metrics
+   * @param to
+   * The to date we want to read the metrics to.
    */
   readMetrics(key: MetricKey, from: Date, to: Date): Promise<Metric[]> {
     return new Promise((resolve, reject) => {
@@ -25,16 +31,19 @@ export class Reader {
         Prefix: key.getAwsPrefix()
       }
 
-      this.s3Client.listObjectsV2(listParams, (err, data) => {
+      this.s3Client.listObjectsV2(request, (err, data) => {
         if(err) {
           reject(err);
         } else {
-          allObjectRequests = data.Contents?.map((object) => this.readMetricsFromObject(object.Key)
+          const allObjectRequests = data.Contents!.
+          filter(obj => obj?.Key !== undefined)
+          .map(
+            (object) => this.readMetricsFromObject(object.Key as string)
           );
           const allRequestPromise = Promise.all(allObjectRequests);
 
           allRequestPromise.then((result) => {
-            allMetrics = result.flat();
+            const allMetrics = result.reduce((a, v) => a.concat(v), []);
 
             resolve(allMetrics);
           }, reject);
@@ -45,7 +54,7 @@ export class Reader {
     });
   }
 
-  readMetricsFromFile(objectKey: string) : Promise<Metrics[]> {
+  private readMetricsFromObject(objectKey: string) : Promise<Metric[]> {
     return new Promise((resolve, reject) => {
       const request: S3.Types.GetObjectRequest = {
         Bucket: this.s3Bucket,
@@ -56,12 +65,12 @@ export class Reader {
         if(err) {
           reject(err);
         } else {
-          const bodyAsString = data.Body.toString('utf-8');
-
-          bodyAsString
+          const bodyAsString = data?.Body ? data.Body.toString('utf-8'): '';
+          const response = bodyAsString
           .split('\n')
-          .map(Metric.fromString);:w
-          
+          .map(metricFromString);
+
+          resolve(response);
         }
       });
     });

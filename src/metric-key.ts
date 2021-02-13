@@ -7,7 +7,7 @@ import {Resolution} from "./resolution";
  */
 export class MetricKey {
 
-  constructor(public group: string, public key: string, resolution: Resolution) {
+  constructor(public group: string, public key: string, public resolution: Resolution) {
   }
 
   /**
@@ -24,9 +24,7 @@ export class MetricKey {
   /**
    * Function that sanitizes keys etc. when creating paths
    */
-  sanitizeInput: (string) => string = 
-    (string) => {
-    return string.replace('/', '_');
-  }
+  sanitizeInput: (input: string) => string = 
+    (input: string) => { return input.replace('/', '_') }
 
 }

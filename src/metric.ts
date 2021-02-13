@@ -15,6 +15,13 @@ export interface Metric {
   value: number
 }
 
+export function createMetricNow(value: number): Metric {
+  return {
+    startTimeAsUnixTimestamp: new Date().valueOf(),
+    value: value
+  };
+}
+
 export function metricFromString(raw: string): Metric {
   const chunks = raw.split(';');
   return {
