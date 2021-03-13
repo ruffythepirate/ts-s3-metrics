@@ -9,8 +9,10 @@
     "lint": "npx tslint src/*",
     "lint:fix": "npx tslint src/* --fix",
     "docs": "npx typedoc src",
+    "infra:up": "docker-compose -f docker-compose.infra.yaml up -d",
+    "infra:down": "docker-compose -f docker-compose.infra.yaml down",
     "test": "npx jest src",
-    "test:it": "npx jest -c jest.it.config.js src",
+    "test:it": "npm run infra:up && npx jest -c jest.it.config.js src && npm run infra:down",
     "test:coverage": "npx jest --coverage src && npm run test:badge",
     "test:badge": "npx lcov-badge-generator -o coverage/badge.svg coverage/lcov.info",
     "test:watch": "npx jest --watchAll src"

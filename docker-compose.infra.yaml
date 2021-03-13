@@ -4,5 +4,8 @@ services:
     image: localstack/localstack-light:0.12.4
     ports:
       - "4566:4566"
+    healthcheck:
+      test: "curl localhost:4566"
+      retries: 5
     environment:
       SERVICES: s3

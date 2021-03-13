@@ -6,7 +6,15 @@ import {MetricKey} from './metric-key';
 import Writer from './writer'
 import {Reader} from "./reader";
 
+function sleep(ms: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 describe('Integration Test raw data', () => {
+
+  jest.setTimeout(20 * 1000);
 
   let s3Client: S3;
   let bucketName: string;
@@ -34,11 +42,21 @@ describe('Integration Test raw data', () => {
         .s3Bucket(bucketName)
         .build();
 
-    await s3Client.createBucket(
-      {
-        Bucket: bucketName
-      }
-    ).promise();
+    for(let i = 0; i < 10 ; i++) {
+        try{
+          await s3Client.createBucket(
+              {
+                Bucket: bucketName
+              }
+          ).promise();
+          await sleep(1000);
+           break;
+        } catch(e) {
+          if (i === 10) {
+            throw e;
+          }
+        }
+    }
   });
 
   it('Saves and reads data.', async () => {
