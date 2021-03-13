@@ -42,11 +42,21 @@ describe('Integration Test raw data', () => {
   });
 
   it('Saves and reads data.', async () => {
-    const key = new MetricKey('group', 'key', Resolution.Day);
+    const key = new MetricKey('group', 'key', Resolution.Raw);
     const metricsToWrite = [createMetricNow(5.5)];
     await writer.writeMetrics(key, metricsToWrite);
     const response = await reader.readMetrics(key, new Date(), new Date());
     expect(response).toEqual(metricsToWrite);
   });
 
+  it('Doesnt read data from other group', async () => {
+    const key = new MetricKey('group', 'key', Resolution.Raw);
+    const keyOtherGroup = new MetricKey('group1', 'key', Resolution.Raw);
+    const keyOtherKey = new MetricKey('group', 'key1', Resolution.Raw);
+    const metricsToWrite = [createMetricNow(5.5)];
+    await writer.writeMetrics(key, metricsToWrite);
+    expect(await reader.readMetrics(keyOtherGroup, new Date(), new Date())).toEqual([]);
+    expect(await reader.readMetrics(keyOtherKey, new Date(), new Date())).toEqual([]);
+
+  });
 });

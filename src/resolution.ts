@@ -9,5 +9,5 @@ export enum Resolution {
   /**
    * No aggregation happens, every unique unix timestamp is put in.
    */
-  PerValue = 'PerValue'
+  Raw = 'Raw'
 };
