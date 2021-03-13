@@ -1,6 +1,8 @@
 import S3 from 'aws-sdk/clients/s3';
 import {MetricKey} from './metric-key';
 import {Metric, metricFromString} from './metric';
+import {MergeMode} from "./merge-mode";
+import {Builder, IBuilder} from "builder-pattern";
 
 /**
  * Class that supports reading metrics from S3. It initializes an
@@ -9,10 +11,16 @@ import {Metric, metricFromString} from './metric';
  */
 export class Reader {
 
-  s3Client: S3; 
+  s3Client: S3;
+  s3Bucket: string;
 
-  constructor(public s3Bucket: string) {
-    this.s3Client = new S3();
+  constructor(s3Bucket: string, s3Client: S3) {
+    this.s3Client = s3Client;
+    this.s3Bucket = s3Bucket;
+  }
+
+  static builder(): IBuilder<Reader> {
+    return Builder(Reader, new Reader('N/A', new S3()));
   }
 
   /**
