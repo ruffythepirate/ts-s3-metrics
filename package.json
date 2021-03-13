@@ -10,6 +10,7 @@
     "lint:fix": "npx tslint src/* --fix",
     "docs": "npx typedoc src",
     "test": "npx jest src",
+    "test:it": "npx jest -c jest.it.config.js src",
     "test:coverage": "npx jest --coverage src && npm run test:badge",
     "test:badge": "npx lcov-badge-generator -o coverage/badge.svg coverage/lcov.info",
     "test:watch": "npx jest --watchAll src"
@@ -44,6 +45,7 @@
   "author": "Johan Ablett-Karlsson",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.843.0"
+    "aws-sdk": "^2.843.0",
+    "builder-pattern": "^1.2.4"
   }
 }

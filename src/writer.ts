@@ -9,10 +9,19 @@ import {MetricKey} from "./metric-key";
  */
 class Writer {
   s3Client: S3; 
+  s3Bucket: string;
+  mergeMode: MergeMode;
 
   constructor(private s3Bucket: string, private mergeMode: MergeMode) {
     this.s3Client = new S3();
   }
+
+  static builder(): Builder {
+    return Builder(Writer)
+      .s3Client(new S3())
+      .mergeMode(MergeMode.merge);
+  }
+  
 
 
   /**
