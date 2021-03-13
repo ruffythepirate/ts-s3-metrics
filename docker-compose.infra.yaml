@@ -1,0 +1,8 @@
+version: "3"
+services:
+  s3:
+    image: localstack/localstack-light:0.12.4
+    ports:
+      - "4566:4566"
+    environment:
+      SERVICES: s3
