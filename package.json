@@ -48,8 +48,10 @@
   },
   "author": "Johan Ablett-Karlsson",
   "license": "MIT",
+  "peerDependencies": {
+    "aws-sdk": "^2.843.0"
+  },
   "dependencies": {
-    "aws-sdk": "^2.843.0",
     "builder-pattern": "^1.2.4"
   }
 }
