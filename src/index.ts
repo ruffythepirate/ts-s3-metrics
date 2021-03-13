@@ -3,4 +3,3 @@ export * from './metric-key';
 export * from './reader';
 export * from './resolution';
 export * from './merge-mode';
-export * from './example';
