@@ -1,29 +1,27 @@
 import {Metric, metricToString} from "./metric";
-import {Resolution} from "./resolution";
 import {MergeMode} from "./merge-mode";
 import S3 from 'aws-sdk/clients/s3';
 import {MetricKey} from "./metric-key";
+import {Builder, IBuilder} from 'builder-pattern';
 
 /**
  * Class that writes metrics into an S3 bucket of your choice.
  */
 class Writer {
-  s3Client: S3; 
-  s3Bucket: string;
-  mergeMode: MergeMode;
+  s3Bucket!: string;
+  mergeMode!: MergeMode;
+  s3Client!: S3;
 
-  constructor(private s3Bucket: string, private mergeMode: MergeMode) {
-    this.s3Client = new S3();
+  constructor(s3Bucket: string, mergeMode: MergeMode, s3Client: S3) {
+    this.s3Client = s3Client;
+    this.s3Bucket = s3Bucket;
+    this.mergeMode = mergeMode;
   }
 
-  static builder(): Builder {
-    return Builder(Writer)
-      .s3Client(new S3())
-      .mergeMode(MergeMode.merge);
+  static builder(): IBuilder<Writer> {
+    return Builder(Writer, new Writer('N/A', MergeMode.merge, new S3()));
   }
   
-
-
   /**
    * Writes the metric into the S3 bucket. Metrics are located in the bucket
    * in a path based on their resolution, then group and finally key. Depending on resolution

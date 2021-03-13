@@ -35,12 +35,14 @@
   "devDependencies": {
     "@types/jest": "^25.2.2",
     "@types/node": "^14.14.27",
+    "@types/uuid": "^8.3.0",
     "jest": "^25",
     "ts-jest": "^25.5.1",
     "tslint": "^5",
     "tslint-config-airbnb": "^5.11.2",
     "typedoc": "^0.17.6",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.2",
+    "uuid": "^3.4.0"
   },
   "author": "Johan Ablett-Karlsson",
   "license": "MIT",
