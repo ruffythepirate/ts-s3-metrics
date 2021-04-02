@@ -1,7 +1,7 @@
 import {Metric, metricToString} from "./metric";
-import {MergeMode} from "./merge-mode";
+import {MergeMode} from "./merging";
 import S3 from 'aws-sdk/clients/s3';
-import {MetricKey} from "./metric-key";
+import {MetricKey} from "./metric";
 import {Builder, IBuilder} from 'builder-pattern';
 
 /**

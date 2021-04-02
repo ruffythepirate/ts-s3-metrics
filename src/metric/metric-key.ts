@@ -1,4 +1,5 @@
 import {Resolution} from "./resolution";
+import {Builder, IBuilder} from "builder-pattern";
 
 /**
  * The metric key is a representation that allows you to find a metric.
@@ -8,6 +9,10 @@ import {Resolution} from "./resolution";
 export class MetricKey {
 
   constructor(public group: string, public key: string, public resolution: Resolution) {
+  }
+
+  static builder(): IBuilder<MetricKey> {
+    return Builder(MetricKey, new MetricKey('N/A', 'N/A', Resolution.Raw));
   }
 
   /**

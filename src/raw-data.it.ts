@@ -1,8 +1,8 @@
 import S3 from 'aws-sdk/clients/s3';
 import {v4 as uuid} from 'uuid';
 import {createMetricNow} from './metric';
-import {Resolution} from './resolution';
-import {MetricKey} from './metric-key';
+import {Resolution} from './metric';
+import {MetricKey} from './metric';
 import Writer from './writer'
 import {Reader} from "./reader";
 

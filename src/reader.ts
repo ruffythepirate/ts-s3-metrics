@@ -1,8 +1,10 @@
 import S3 from 'aws-sdk/clients/s3';
-import {MetricKey} from './metric-key';
+import {MetricKey} from './metric';
 import {Metric, metricFromString} from './metric';
-import {MergeMode} from "./merge-mode";
+import {MergeMode} from "./merging";
 import {Builder, IBuilder} from "builder-pattern";
+
+export type ReadFunction = (key: MetricKey, from: Date, to: Date) => Promise<Metric[]>;
 
 /**
  * Class that supports reading metrics from S3. It initializes an
