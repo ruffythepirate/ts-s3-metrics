@@ -89,9 +89,27 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="globals.html#mergearraysfn" class="tsd-kind-icon">Merge<wbr>Arrays<wbr>Fn</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#mergevaluesfn" class="tsd-kind-icon">Merge<wbr>Values<wbr>Fn</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#readfunction" class="tsd-kind-icon">Read<wbr>Function</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable"><a href="globals.html#mergerawmetricswithmerge" class="tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Merge</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#mergerawmetricswithoverride" class="tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Override</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#mergerawmetricswiththrow" class="tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Throw</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="globals.html#createmergefunction" class="tsd-kind-icon">create<wbr>Merge<wbr>Function</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#createmetricnow" class="tsd-kind-icon">create<wbr>Metric<wbr>Now</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#mergearrays" class="tsd-kind-icon">merge<wbr>Arrays</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#metricfromstring" class="tsd-kind-icon">metric<wbr>From<wbr>String</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#metrictostring" class="tsd-kind-icon">metric<wbr>ToString</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#sleep" class="tsd-kind-icon">sleep</a></li>
@@ -101,7 +119,273 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="mergearraysfn" class="tsd-anchor"></a>
+					<h3>Merge<wbr>Arrays<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">Merge<wbr>Arrays<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/merging/merge.ts#L12">merging/merge.ts:12</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Type for a function merging two arrays together.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>oldValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+											<li>
+												<h5>newValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="mergevaluesfn" class="tsd-anchor"></a>
+					<h3>Merge<wbr>Values<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">Merge<wbr>Values<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>oldValue<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a>, newValue<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/merging/merge.ts#L7">merging/merge.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Type for a function merging two values with the same time together.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldValue<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a>, newValue<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>oldValue: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a></h5>
+											</li>
+											<li>
+												<h5>newValue: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="readfunction" class="tsd-anchor"></a>
+					<h3>Read<wbr>Function</h3>
+					<div class="tsd-signature tsd-kind-icon">Read<wbr>Function<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><a href="classes/metrickey.html" class="tsd-signature-type">MetricKey</a>, from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/reader.ts#L7">reader.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><a href="classes/metrickey.html" class="tsd-signature-type">MetricKey</a>, from<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span>, to<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>key: <a href="classes/metrickey.html" class="tsd-signature-type">MetricKey</a></h5>
+											</li>
+											<li>
+												<h5>from: <span class="tsd-signature-type">Date</span></h5>
+											</li>
+											<li>
+												<h5>to: <span class="tsd-signature-type">Date</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="mergerawmetricswithmerge" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Merge</h3>
+					<div class="tsd-signature tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Merge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = createMergeFunction((oldValue, newValue) &#x3D;&gt; [oldValue, newValue])</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/merging/merge.ts#L22">merging/merge.ts:22</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Merges the two metrics arrays. If a value is found at the same time, both values will be used.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>oldValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+											<li>
+												<h5>newValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="mergerawmetricswithoverride" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Override</h3>
+					<div class="tsd-signature tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Override<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = createMergeFunction((oldValue, newValue) &#x3D;&gt; [newValue])</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/merging/merge.ts#L17">merging/merge.ts:17</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Merges the two metrics arrays. If a value is found at the same time, only the value from the newValues array will be used.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>oldValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+											<li>
+												<h5>newValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="mergerawmetricswiththrow" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Throw</h3>
+					<div class="tsd-signature tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Throw<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = createMergeFunction((oldValue, newValue) &#x3D;&gt; {throw Error(&#x27;Duplicate value found!&#x27;);})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/merging/merge.ts#L27">merging/merge.ts:27</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Merges the two metrics arrays. If a value is found at the same time an exception is thrown.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>oldValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+											<li>
+												<h5>newValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="createmergefunction" class="tsd-anchor"></a>
+					<h3>create<wbr>Merge<wbr>Function</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Merge<wbr>Function<span class="tsd-signature-symbol">(</span>mergeValuesFn<span class="tsd-signature-symbol">: </span><a href="globals.html#mergevaluesfn" class="tsd-signature-type">MergeValuesFn</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#mergearraysfn" class="tsd-signature-type">MergeArraysFn</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/merging/merge.ts#L34">merging/merge.ts:34</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to create a merge function for two arrays. The provided function handles when both arrays have an item with the same timestamp.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mergeValuesFn: <a href="globals.html#mergevaluesfn" class="tsd-signature-type">MergeValuesFn</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="globals.html#mergearraysfn" class="tsd-signature-type">MergeArraysFn</a></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="createmetricnow" class="tsd-anchor"></a>
 					<h3>create<wbr>Metric<wbr>Now</h3>
@@ -112,7 +396,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/aee4430/src/metric.ts#L18">metric.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/metric/metric.ts#L18">metric/metric.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -126,6 +410,35 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="mergearrays" class="tsd-anchor"></a>
+					<h3>merge<wbr>Arrays</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">merge<wbr>Arrays<span class="tsd-signature-symbol">(</span>oldValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, newValues<span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span>, mergeFunction<span class="tsd-signature-symbol">: </span><a href="globals.html#mergevaluesfn" class="tsd-signature-type">MergeValuesFn</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/merging/merge.ts#L40">merging/merge.ts:40</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>newValues: <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>mergeFunction: <a href="globals.html#mergevaluesfn" class="tsd-signature-type">MergeValuesFn</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/metric.html" class="tsd-signature-type">Metric</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="metricfromstring" class="tsd-anchor"></a>
 					<h3>metric<wbr>From<wbr>String</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -135,7 +448,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/aee4430/src/metric.ts#L25">metric.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/metric/metric.ts#L25">metric/metric.ts:25</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -158,7 +471,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/aee4430/src/metric.ts#L34">metric.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/metric/metric.ts#L34">metric/metric.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -181,7 +494,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/aee4430/src/raw-data.it.ts#L9">raw-data.it.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/ruffythepirate/ts-s3-metrics/blob/1f47db3/src/raw-data.it.ts#L9">raw-data.it.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -224,8 +537,32 @@
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/metric.html" class="tsd-kind-icon">Metric</a>
 					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#mergearraysfn" class="tsd-kind-icon">Merge<wbr>Arrays<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#mergevaluesfn" class="tsd-kind-icon">Merge<wbr>Values<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#readfunction" class="tsd-kind-icon">Read<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mergerawmetricswithmerge" class="tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Merge</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mergerawmetricswithoverride" class="tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Override</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mergerawmetricswiththrow" class="tsd-kind-icon">merge<wbr>Raw<wbr>Metrics<wbr>With<wbr>Throw</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createmergefunction" class="tsd-kind-icon">create<wbr>Merge<wbr>Function</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#createmetricnow" class="tsd-kind-icon">create<wbr>Metric<wbr>Now</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#mergearrays" class="tsd-kind-icon">merge<wbr>Arrays</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#metricfromstring" class="tsd-kind-icon">metric<wbr>From<wbr>String</a>

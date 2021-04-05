@@ -1,6 +1,6 @@
 {
   "name": "ts-s3-metrics",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Lib that allows you to read or write metrics from s3",
   "main": "dist/index.js",
   "types": "dist/index.d.js",
