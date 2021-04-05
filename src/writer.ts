@@ -30,7 +30,7 @@ class Writer {
   writeMetrics(metricKey: MetricKey,  metrics: Metric[]): Promise<any> {
       return new Promise((resolve, reject) => {
       
-        const key = metricKey.getAwsPrefix() + new Date().getUTCFullYear();
+        const key = metricKey.getAwsPrefix() + 'all';
 
         const body = 
           metrics
