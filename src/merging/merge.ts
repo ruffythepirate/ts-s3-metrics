@@ -1,22 +1,43 @@
 import {Metric} from '../metric';
 import {MergeMode} from './merge-mode';
 
-type MergeFunction = (oldValue: Metric, newValue: Metric) => Metric[];
+/**
+ * Type for a function merging two values with the same time together.
+ */
+export type MergeValuesFn = (oldValue: Metric, newValue: Metric) => Metric[];
 
-export function mergeRawMetrics(oldValues: Metric[], newValues: Metric[], mergeMode: MergeMode): Metric[] {
-  return mergeArrays(oldValues, newValues, getMergeFunction(mergeMode));
-}
+/**
+ * Type for a function merging two arrays together.
+ */
+export type MergeArraysFn = (oldValues: Metric[], newValues: Metric[]) => Metric[];
 
-function getMergeFunction(mergeMode: MergeMode): MergeFunction {
-  if(mergeMode === MergeMode.override) {
-    return (oldValue, newValue) => [ newValue];
-  } else if (mergeMode === MergeMode.merge) {
-    return (oldValue, newValue) => [oldValue, newValue];
+/**
+ * Merges the two metrics arrays. If a value is found at the same time, only the value from the newValues array will be used.
+ */
+export const mergeRawMetricsWithOverride = createMergeFunction((oldValue, newValue) => [newValue]);
+
+/**
+ * Merges the two metrics arrays. If a value is found at the same time, both values will be used.
+ */
+export const mergeRawMetricsWithMerge = createMergeFunction((oldValue, newValue) => [oldValue, newValue]);
+
+/**
+ * Merges the two metrics arrays. If a value is found at the same time an exception is thrown.
+ */
+export const mergeRawMetricsWithThrow = createMergeFunction((oldValue, newValue) => {
+  throw Error('Duplicate value found!');
+});
+
+/**
+ * Used to create a merge function for two arrays. The provided function handles when both arrays have an item with the same timestamp.
+ */
+export function createMergeFunction(mergeValuesFn: MergeValuesFn): MergeArraysFn {
+  return function(oldValues: Metric[], newValues: Metric[]) {
+    return mergeArrays(oldValues, newValues, mergeValuesFn);
   }
-  return (oldValue, newValue) => { throw Error('Duplicate value found!'); }
 }
 
-function mergeArrays(oldValues: Metric[], newValues: Metric[], mergeFunction: MergeFunction): Metric[] {
+function mergeArrays(oldValues: Metric[], newValues: Metric[], mergeFunction: MergeValuesFn): Metric[] {
   const newArray = [];
 
   let i = 0;

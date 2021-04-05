@@ -1,31 +1,30 @@
-import {MergeMode} from "./merge-mode"
 import {createMetricNow} from "../metric";
-import {mergeRawMetrics} from "./merge";
+import {mergeRawMetricsWithMerge, mergeRawMetricsWithOverride, mergeRawMetricsWithThrow} from "./merge";
 
 describe('mergeRawMetrics', () => {
 
 
   [
-    MergeMode.override,
-    MergeMode.merge,
-    MergeMode.throwOnDuplicate
-  ].forEach(m => {
-    it(`should merge metrics well for ${m}`, () => {
+    mergeRawMetricsWithMerge,
+    mergeRawMetricsWithThrow,
+    mergeRawMetricsWithOverride
+  ].forEach(fn => {
+    it(`should merge metrics well for ${fn}`, () => {
       const metric = createMetricNow(1.0);
       const metric2 = createMetricNow(2.0);
       metric2.startTimeAsUnixTimestamp += 10;
 
-      const result = mergeRawMetrics([metric], [metric2], m);
+      const result = fn([metric], [metric2]);
 
       expect(result.length).toBe(2);
     });
   })
 
-  describe(`${MergeMode.override}`, () => {
+  describe(`override`, () => {
     it(`should remove duplicates`, () => {
       const metric = createMetricNow(1.0);
 
-      const result = mergeRawMetrics([metric], [metric], MergeMode.override);
+      const result = mergeRawMetricsWithOverride([metric], [metric]);
 
       expect(result.length).toBe(1);
     });
@@ -36,28 +35,28 @@ describe('mergeRawMetrics', () => {
 
       metric2.startTimeAsUnixTimestamp = metric1.startTimeAsUnixTimestamp;
 
-      const result = mergeRawMetrics([metric1], [metric2], MergeMode.override);
+      const result = mergeRawMetricsWithOverride([metric1], [metric2]);
 
       expect(result[0]).toEqual(metric2);
     });
   });
 
-  describe(`${MergeMode.merge}`, () => {
+  describe(`merge`, () => {
     it(`should add both`, () => {
       const metric = createMetricNow(1.0);
 
-      const result = mergeRawMetrics([metric], [metric], MergeMode.merge);
+      const result = mergeRawMetricsWithMerge([metric], [metric]);
 
       expect(result.length).toBe(2);
     });
   });
 
-  describe(`${MergeMode.throwOnDuplicate}`, () => {
+  describe(`throw`, () => {
     it(`should throw on duplicate`, () => {
       const metric = createMetricNow(1.0);
 
       expect(() => {
-        const result = mergeRawMetrics([metric], [metric], MergeMode.throwOnDuplicate);
+        const result = mergeRawMetricsWithThrow([metric], [metric]);
       }).toThrow();
     });
   });
