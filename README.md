@@ -12,6 +12,8 @@ AWS has very good support for metrics, and a very powerful way of implementing t
   - Support different merge modes when writing metrics.
   - Support writing metrics in different resolutions.
 
+For full information, please refer to the [API documentation](https://ruffythepirate.github.io/ts-s3-metrics/globals.html) to see available classes and their functions.
+
 ## Requirements
 
 * Node and npm
